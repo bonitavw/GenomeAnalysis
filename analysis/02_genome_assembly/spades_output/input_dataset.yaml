@@ -1,0 +1,7 @@
+- "left reads":
+  - "/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_1P_clean.fq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_2P_clean.fq.gz"
+  "type": "paired-end"

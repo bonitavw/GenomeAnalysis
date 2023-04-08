@@ -1,0 +1,100 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K21/configs/config.info
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K21/configs/isolate_mode.info
+  config_dir: K21
+  del_after: []
+  output_files: []
+  path: /sw/bioinfo/spades/3.15.5/rackham/bin/spades-core
+  short_name: k21
+- STAGE: K33
+  args:
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K33/configs/config.info
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K33/configs/isolate_mode.info
+  config_dir: K33
+  del_after: []
+  output_files: []
+  path: /sw/bioinfo/spades/3.15.5/rackham/bin/spades-core
+  short_name: k33
+- STAGE: K55
+  args:
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/configs/config.info
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/configs/isolate_mode.info
+  config_dir: K55
+  del_after: []
+  output_files: []
+  path: /sw/bioinfo/spades/3.15.5/rackham/bin/spades-core
+  short_name: k55
+- STAGE: Copy files
+  args:
+  - /sw/bioinfo/spades/3.15.5/rackham/share/spades/spades_pipeline/scripts/copy_files.py
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/before_rr.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/before_rr.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/assembly_graph_after_simplification.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/assembly_graph_after_simplification.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/final_contigs.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/contigs.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/first_pe_contigs.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/first_pe_contigs.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/strain_graph.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/strain_graph.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/scaffolds.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/scaffolds.fasta
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/scaffolds.paths
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/scaffolds.paths
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/assembly_graph_with_scaffolds.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/assembly_graph_with_scaffolds.gfa
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/assembly_graph.fastg
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/assembly_graph.fastg
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/K55/final_contigs.paths
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_zYGS26
+  output_files: []
+  path: /usr/bin/python
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /sw/bioinfo/spades/3.15.5/rackham/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/scaffolds.fasta
+  - --misc_dir
+  - /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  output_files: []
+  path: /usr/bin/python
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  output_files: []
+  path: 'true'
+  short_name: terminate

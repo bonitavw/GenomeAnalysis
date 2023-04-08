@@ -1,0 +1,32 @@
+Command line: /sw/bioinfo/spades/3.15.5/snowy/bin/spades.py	--pe1-1	/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_1P_clean.fq.gz	--pe1-2	/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_2P_clean.fq.gz	--isolate	-o	/domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output	
+
+System information:
+  SPAdes version: 3.15.5
+  Python version: 2.7.5
+  OS: Linux-3.10.0-1160.88.1.el7.x86_64-x86_64-with-centos-7.9.2009-Core
+
+Output dir: /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output
+Mode: ONLY assembling (without read error correction)
+Debug mode is turned OFF
+
+Dataset parameters:
+  Isolate mode
+  Reads:
+    Library number: 1, library type: paired-end
+      orientation: fr
+      left reads: ['/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_1P_clean.fq.gz']
+      right reads: ['/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina/E745-1.L500_SZAXPI015146-56_2P_clean.fq.gz']
+      interlaced reads: not specified
+      single reads: not specified
+      merged reads: not specified
+Assembly parameters:
+  k: automatic selection based on read length
+  Repeat resolution is enabled
+  Mismatch careful mode is turned OFF
+  MismatchCorrector will be SKIPPED
+  Coverage cutoff is turned OFF
+Other parameters:
+  Dir for temp files: /domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/spades_output/tmp
+  Threads: 16
+  Memory limit (in Gb): 125
+
