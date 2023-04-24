@@ -15,4 +15,7 @@ ANALYSIS_DIR="/domus/h1/bonitavw/GenomeAnalysis/analysis"
 module load bioinfo-tools
 module load canu
 
-canu -p 'canu-PacBio' -d ${ANALUSIS_DIR}/02_genome_assembly/canu_output/ -pacbio-raw ${PACBIO}/*fastq.gz
+canu -p pacbio -d ${ANALYSIS_DIR}/02_genome_assembly/canu_output/ genomeSize=2.8m useGrid=true gridOptions="-A uppmax2023-2-8 -t 05:00:00" -pacbio-raw ${PACBIO_DATA}/*.subreads.fastq.gz &>> mylogcanu
+
+
+
