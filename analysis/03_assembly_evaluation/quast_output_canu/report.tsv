@@ -1,0 +1,51 @@
+Assembly	pacbio.contigs
+# contigs (>= 0 bp)	10
+# contigs (>= 1000 bp)	10
+# contigs (>= 5000 bp)	9
+# contigs (>= 10000 bp)	9
+# contigs (>= 25000 bp)	3
+# contigs (>= 50000 bp)	2
+Total length (>= 0 bp)	3115044
+Total length (>= 1000 bp)	3115044
+Total length (>= 5000 bp)	3110818
+Total length (>= 10000 bp)	3110818
+Total length (>= 25000 bp)	3001873
+Total length (>= 50000 bp)	2961859
+# contigs	10
+Largest contig	2762476
+Total length	3115044
+Reference length	2919198
+GC (%)	37.80
+Reference GC (%)	37.88
+N50	2762476
+NG50	2762476
+N75	2762476
+NG75	2762476
+L50	1
+LG50	1
+L75	1
+LG75	1
+# misassemblies	189
+# misassembled contigs	1
+Misassembled contigs length	2762476
+# local misassemblies	37
+# scaffold gap ext. mis.	0
+# scaffold gap loc. mis.	0
+# unaligned mis. contigs	4
+# unaligned contigs	4 + 6 part
+Unaligned length	535902
+Genome fraction (%)	84.942
+Duplication ratio	1.040
+# N's per 100 kbp	0.00
+# mismatches per 100 kbp	390.14
+# indels per 100 kbp	20.00
+Largest alignment	137654
+Total aligned length	2577175
+NA50	26511
+NGA50	29113
+NA75	6591
+NGA75	10307
+LA50	30
+LGA50	27
+LA75	83
+LGA75	66
