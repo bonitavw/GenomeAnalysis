@@ -1,0 +1,30 @@
+# reading input file "/domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM973400v2_genomic.fasta" of length 2919199
+# construct suffix tree for sequence of length 2919199
+# (maximum reference length is 2305843009213693948)
+# (maximum query length is 18446744073709551615)
+# process 29191 characters per dot
+#....................................................................................................
+# CONSTRUCTIONTIME mummer /domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM973400v2_genomic.fasta 1.20
+# reading input file "/domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/canu_output/pacbio.contigs.fasta" of length 3115053
+# matching query-file "/domus/h1/bonitavw/GenomeAnalysis/analysis/02_genome_assembly/canu_output/pacbio.contigs.fasta"
+# against subject-file "/domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM973400v2_genomic.fasta"
+# COMPLETETIME mummer /domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM973400v2_genomic.fasta 3.65
+# SPACE mummer /domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM973400v2_genomic.fasta 5.82
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 884.
+	(Maybe you should just omit the defined()?)
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 894.
+	(Maybe you should just omit the defined()?)
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 981.
+	(Maybe you should just omit the defined()?)
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 991.
+	(Maybe you should just omit the defined()?)
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 1034.
+	(Maybe you should just omit the defined()?)
+defined(%hash) is deprecated at /sw/bioinfo/MUMmer/3.23/snowy/mummerplot line 1044.
+	(Maybe you should just omit the defined()?)
+gnuplot 4.6 patchlevel 2
+Reading mummer file /domus/h1/bonitavw/GenomeAnalysis/analysis/03_assembly_evaluation/mummerplot/output_canu.mum (use mummer -c)
+Writing plot files /domus/h1/bonitavw/GenomeAnalysis/analysis/03_assembly_evaluation/mummerplot/mummerplot_output_canu.fplot, /domus/h1/bonitavw/GenomeAnalysis/analysis/03_assembly_evaluation/mummerplot/mummerplot_output_canu.rplot
+WARNING: Multiple ref sequences overlaid, try -R or -r
+Writing gnuplot script /domus/h1/bonitavw/GenomeAnalysis/analysis/03_assembly_evaluation/mummerplot/mummerplot_output_canu.gp
+Rendering plot /domus/h1/bonitavw/GenomeAnalysis/analysis/03_assembly_evaluation/mummerplot/mummerplot_output_canu.png
