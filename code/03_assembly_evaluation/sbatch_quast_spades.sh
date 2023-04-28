@@ -4,8 +4,8 @@
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 01:00:00
-#SBATCH -J ga-quast
-#SBATCH -o /domus/h1/bonitavw/GenomeAnalysis/logs/ge-quast.log
+#SBATCH -J ga-quast-spades
+#SBATCH -o /domus/h1/bonitavw/GenomeAnalysis/logs/ge-quast-spades.log
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user vanwaardenburgbonita@gmail.com
 
@@ -15,4 +15,4 @@ REFERENCE="/domus/h1/bonitavw/GenomeAnalysis/data/raw_data/GCF_009734005.1_ASM97
 module load bioinfo-tools
 module load quast
 
-quast.py ${ANALYSIS_DIR}/02_genome_assembly/canu_output/pacbio.contigs.fasta -r ${REFERENCE} -o ${ANALYSIS_DIR}/03_assembly_evaluation/quast_output/
+quast.py ${ANALYSIS_DIR}/02_genome_assembly/spades_output/contigs.fasta -r ${REFERENCE} -o ${ANALYSIS_DIR}/03_assembly_evaluation/quast_output_spades/
