@@ -32,19 +32,19 @@ write.table(topGenes, file = "/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comp
 
 
 ## make the MA plot
-pdf("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/MAplot.pdf")
+png("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/MAplot.png")
 res <- lfcShrink(dds, coef="condition_Serum_vs_BH", type="apeglm")
 plotMA(res, main="MA Plot", ylim=c(-2,2))
 dev.off()
 
 ## make the histogram
-pdf("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/histogram.pdf")
+png("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/histogram.png")
 hist(res$pvalue[res$baseMean > 1], breaks = 0:20/20,
      col = "grey50", border = "white")
 dev.off()
 
 ## make the heatmap
-pdf("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/heatmap.pdf")
+png("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/heatmap.png")
 
 topVarGenes <- head(order(rowVars(assay(rlog(dds))), decreasing = TRUE), 20)
 mat <- assay(rlog(dds))[ topVarGenes, ]
