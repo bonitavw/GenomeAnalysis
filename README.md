@@ -11,8 +11,8 @@ Basic analyses:
 - [x] Differential expression analysis between rich medium and heat-inactivated serum conditions.
 
 Extra analyses:
-- [x] Genome assembly with Illumina and Nanopore reads.
-- [x] Assembly evaluation (extra methods).
+- [x] Genome assembly with Illumina and Nanopore reads (SPAdes).
+- [x] Assembly evaluation (extra method: MUMmerplot).
 - [ ] Plasmid identification.
 - [ ] SNPs calling.
 - [ ] Evaluate antibiotic resistance potential.
