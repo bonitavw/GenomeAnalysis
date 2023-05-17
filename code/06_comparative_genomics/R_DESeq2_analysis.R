@@ -5,7 +5,6 @@ library("apeglm")
 library(ggplot2)
 library(pheatmap)
 
-
 directory <- "/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/htseq_counts/"
 
 serum_files <- grep("Serum", list.files(directory), value=TRUE)
@@ -25,10 +24,16 @@ ddsHTSeq <- DESeqDataSetFromHTSeqCount(sampleTable = sampleTable, directory = di
 dds <- DESeq(ddsHTSeq)
 
 res <- results(dds)
-resFilt <- res[which(res$padj < 0.05 & abs(res$log2FoldChange) > 1),]
 
-topGenes <- head(resFilt[order(resFilt$padj),], n=20)
-write.table(topGenes, file = "/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/topGenes.txt", sep = "\t", quote = FALSE)
+resFilt <- res[which(res$pvalue < 0.05 & abs(res$log2FoldChange) > 1),]
+topGenes <- head(resFilt[order(resFilt$pvalue),], n=50)
+write.csv(topGenes, "topGenes.csv")
+
+resSig <- subset(res, padj < 0.1)
+downreg_genes <- resSig[order(resSig$log2FoldChange), ]
+write.table(downreg_genes, file = "downreg_genes.txt", sep = "\t", quote = FALSE, row.names = TRUE)
+upreg_genes <- resSig[ order(resSig$log2FoldChange, decreasing = TRUE), ]
+write.table(upreg_genes, file = "upreg_genes.txt", sep = "\t", quote = FALSE, row.names = TRUE)
 
 
 ## make the MA plot
@@ -46,7 +51,7 @@ dev.off()
 ## make the heatmap
 png("/domus/h1/bonitavw/GenomeAnalysis/analysis/06_comparative_genomics/heatmap.png")
 
-topVarGenes <- head(order(rowVars(assay(rlog(dds))), decreasing = TRUE), 20)
+topVarGenes <- head(order(rowVars(assay(rlog(dds))), decreasing = TRUE), 50)
 mat <- assay(rlog(dds))[ topVarGenes, ]
 mat <- mat - rowMeans(mat)
 anno <- as.data.frame(colData(rlog(dds))[, c("condition","sizeFactor")])
