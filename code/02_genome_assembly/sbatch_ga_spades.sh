@@ -11,9 +11,10 @@
 
 TRIM_DATA="/domus/h1/bonitavw/GenomeAnalysis/data/trimmed_data/genomics_data/Illumina"
 ANALYSIS_DIR="/domus/h1/bonitavw/GenomeAnalysis/analysis"
+NANOPORE_DATA="/domus/h1/bonitavw/GenomeAnalysis/data/raw_data/genomics_data/Nanopore"
 
 module load bioinfo-tools
 module load spades
 
 spades.py --pe1-1 ${TRIM_DATA}/E745-1.L500_SZAXPI015146-56_1P_clean.fq.gz --pe1-2 ${TRIM_DATA}/E745-1.L500_SZAXPI015146-56_2P_clean.fq.gz \
-    --isolate -o ${ANALYSIS_DIR}/02_genome_assembly/spades_output 
+    --isolate --nanopore ${NANOPORE_DATA}/E745_all.fasta.gz -o ${ANALYSIS_DIR}/02_genome_assembly/spades_output 
